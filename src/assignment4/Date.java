@@ -231,7 +231,7 @@ public class Date{
         if((monthNumber < 0) || (monthNumber > 12))
             throw new Exception("Invalid month");
         
-        month = monthNumber;
+        this.month = monthNumber;
     }
     
     /**
@@ -244,7 +244,7 @@ public class Date{
         if(!monthOK(monthString))
             throw new Exception("Invalid month");
         
-        month = monthInt(monthString);
+        this.month = monthInt(monthString);
     }
     
     /**
@@ -525,8 +525,16 @@ public class Date{
      * @param otherDate The Date that you want to compare the calling Date object to
      * @return True if the two Date objects contain the same data, false otherwise
      */
-    public boolean equals(Date otherDate){
-        return ((month == otherDate.month) && (day == otherDate.day) && (year == otherDate.year));
+    public boolean equals(Object anotherObject){
+    	if(anotherObject == null)
+            return false;
+        if(getClass() != anotherObject.getClass())
+            return false;
+        
+        Date otherDate = (Date) anotherObject;
+        return this.getMonth().equals(otherDate.getMonth())
+        		&& this.getDay() == otherDate.getDay()
+        		&& this.getYear() == otherDate.getYear();
     }
     
 }
