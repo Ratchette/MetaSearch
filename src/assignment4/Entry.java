@@ -27,7 +27,7 @@ public abstract class Entry {
     public Entry() {
         title = "No Title";
         type = "";
-        releaseDate = this.releaseDate.clone();
+        releaseDate = new Date();
         price = 0;
     }
     

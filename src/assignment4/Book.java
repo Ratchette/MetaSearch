@@ -217,9 +217,9 @@ public class Book extends Entry{
         if(getClass() != anotherObject.getClass())
             return false;
         
-        Book anotherBook = (Book)anotherObject;
+        Book anotherBook = (Book) anotherObject;
         return (getTitle().equals(anotherBook.getTitle())
-            && author.equals(anotherBook.author)
+            && getAuthor().equals(anotherBook.getAuthor())
             && getType().equals(anotherBook.getType()) 
             && getReleaseDate().equals(anotherBook.getReleaseDate()) 
             && getPrice() == anotherBook.getPrice());
